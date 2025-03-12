@@ -18,6 +18,9 @@ export class Task {
     default: TaskStatus.TODO,
   })
   status: TaskStatus;
+
+  @Prop({ required: true })
+  userId: string;
 }
 
 export const TaskSchema = SchemaFactory.createForClass(Task);

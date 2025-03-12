@@ -6,21 +6,25 @@ import {
   Param,
   Patch,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { TasksService } from './tasks.service';
+import { CreateTaskDto } from './dto/createTask.dto';
+import { UpdateTaskDto } from './dto/updateTask.dto';
 
 @Controller('tasks')
 export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
 
   @Post()
-  create(@Body() createTaskDto: any) {
+  create(@Body() createTaskDto: CreateTaskDto) {
     return this.tasksService.createTask(createTaskDto);
   }
 
   @Get()
-  findAll() {
-    return this.tasksService.getAllTasks();
+  findAll(@Query('userId') userId?: string) {
+    const filter = userId && userId.trim() !== '' ? { userId } : {};
+    return this.tasksService.getAllTasks(filter);
   }
 
   @Get(':id')
@@ -29,7 +33,7 @@ export class TasksController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateTaskDto: any) {
+  update(@Param('id') id: string, @Body() updateTaskDto: UpdateTaskDto) {
     return this.tasksService.updateTask(id, updateTaskDto);
   }
 
