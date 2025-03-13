@@ -8,7 +8,9 @@ import { UpdateTaskDto } from './dto/updateTask.dto';
 
 @Injectable()
 export class TasksService {
-  constructor(@InjectModel(Task.name) private taskModel: Model<TaskDocument>) {}
+  constructor(
+    @InjectModel(Task.name) private readonly taskModel: Model<TaskDocument>,
+  ) {}
 
   async createTask(createTaskDto: CreateTaskDto): Promise<Task> {
     const newTask = new this.taskModel({
