@@ -17,4 +17,13 @@ Ce backend expose une API REST pour gérer des tâches. Il permet de créer, ré
 2. Placez vous dans le répertoire todo-app-back
 3. Installez les dépendences
 
+## Configuration
+
+1. Vérifiez votre URL de connexion à MongoDB dans src/app.module.ts
+
+## Tests
+
+Test unitaires écrits en Jest
+
+
   
