@@ -11,7 +11,6 @@ Ce backend expose une API REST pour gérer des tâches. Il permet de créer, ré
 - **Node.js** : Version 16 (version LTS recommandée)  
 - **MongoDB** : En local ou via [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 
--
 ## Installation
 
 1. Clonez le dépôt : https://github.com/Revensis/todo-app.git 
