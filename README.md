@@ -14,6 +14,8 @@ Ce backend expose une API REST pour gérer des tâches. Il permet de créer, ré
 -
 ## Installation
 
-1. Clonez le dépôt : 
+1. Clonez le dépôt : https://github.com/Revensis/todo-app.git 
+2. Placez vous dans le répertoire todo-app-back
+3. Installez les dépendences
 
   
